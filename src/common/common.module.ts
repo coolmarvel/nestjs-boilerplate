@@ -14,6 +14,7 @@ import { DebuggerModule } from './debugger/debugger.module';
 import { PolicyModule } from './policy/policy.module';
 import { LoggerModule } from './logger/logger.module';
 import { ApiKeyModule } from './api-key/api-key.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { ApiKeyModule } from './api-key/api-key.module';
     SettingModule,
     LoggerModule,
     ApiKeyModule,
+    AuthModule,
     MongooseModule.forRootAsync({
       connectionName: DATABASE_CONNECTION_NAME,
       imports: [DatabaseOptionsModule],
