@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { IHelperEncryptionService } from '../helper/interface/helper.encryption-service.interface';
+import { IHelperEncryptionService } from '../interface/helper.encryption-service.interface';
 import { JwtService } from '@nestjs/jwt';
 import { AES, enc, mode, pad } from 'crypto-js';
-import { IHelperJwtOptions, IHelperJwtVerifyOptions } from '../helper/interface/helper.interface';
+import { IHelperJwtOptions, IHelperJwtVerifyOptions } from '../interface/helper.interface';
 
 @Injectable()
 export class HelperEncryptionService implements IHelperEncryptionService {

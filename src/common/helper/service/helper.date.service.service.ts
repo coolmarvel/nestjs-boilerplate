@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import moment from 'moment';
-import { IHelperDateService } from '../helper/interface/helper.date-service.interface';
+import { IHelperDateService } from '../interface/helper.date-service.interface';
 import {
   IHelperDateExtractDate,
   IHelperDateOptionsBackward,
@@ -11,8 +11,8 @@ import {
   IHelperDateOptionsRoundDown,
   IHelperDateStartAndEnd,
   IHelperDateStartAndEndDate,
-} from '../helper/interface/helper.interface';
-import { ENUM_HELPER_DATE_DIFF, ENUM_HELPER_DATE_FORMAT } from '../helper/constant/helper.enum.constant';
+} from '../interface/helper.interface';
+import { ENUM_HELPER_DATE_DIFF, ENUM_HELPER_DATE_FORMAT } from '../constant/helper.enum.constant';
 
 @Injectable()
 export class HelperDateService implements IHelperDateService {

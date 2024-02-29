@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IHelperHashService } from '../helper/interface/helper.hash-service.interface';
+import { IHelperHashService } from '../interface/helper.hash-service.interface';
 import { compareSync, genSaltSync, hashSync } from 'bcryptjs';
 import { SHA256, enc } from 'crypto-js';
 

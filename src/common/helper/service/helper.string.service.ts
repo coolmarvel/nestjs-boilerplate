@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IHelperStringService } from '../helper/interface/helper.string-service.interface';
-import { IHelperStringRandomOptions } from '../helper/interface/helper.interface';
+import { IHelperStringService } from '../interface/helper.string-service.interface';
+import { IHelperStringRandomOptions } from '../interface/helper.interface';
 import { faker } from '@faker-js/faker';
 
 @Injectable()

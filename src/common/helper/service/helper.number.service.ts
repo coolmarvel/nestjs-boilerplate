@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IHelperNumberService } from '../helper/interface/helper.number-service.interface';
+import { IHelperNumberService } from '../interface/helper.number-service.interface';
 import { faker } from '@faker-js/faker';
 
 @Injectable()
