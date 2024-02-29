@@ -1,4 +1,14 @@
-import appConfig from './app.config';
-import helperConfig from './helper.config';
+import AppConfig from './app.config';
+import AuthConfig from './auth.config';
+import DatabaseConfig from './database.config';
+import HelperConfig from './helper.config';
+import AwsConfig from './aws.config';
+import UserConfig from './user.config';
+import FileConfig from './file.config';
+import KafkaConfig from './kafka.config';
+import RequestConfig from './request.config';
+import DocConfig from './doc.config';
+import DebuggerConfig from './debugger.config';
+import MessageConfig from './message.config';
 
-export default [appConfig, helperConfig];
+export default [AppConfig, AuthConfig, DatabaseConfig, HelperConfig, AwsConfig, UserConfig, RequestConfig, FileConfig, KafkaConfig, DocConfig, DebuggerConfig, MessageConfig];

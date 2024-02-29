@@ -1,5 +1,5 @@
 import { NestApplication, NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from './app/app.module';
 import { ConfigService } from '@nestjs/config';
 import { useContainer } from 'class-validator';
 import { Logger, VersioningType } from '@nestjs/common';
@@ -8,7 +8,7 @@ async function bootstrap() {
   const app: NestApplication = await NestFactory.create(AppModule);
 
   const configService: ConfigService = app.get(ConfigService);
-  // const databaseURI: string = configService.get<string>('database.uri');
+  const databaseUri: string = configService.get<string>('database.host');
   const env: string = configService.get<string>('app.env');
   const host: string = configService.get<string>('app.http.host');
   const port: number = configService.get<number>('app.http.port');
@@ -31,9 +31,9 @@ async function bootstrap() {
   // versioning
   if (versionEnable) app.enableVersioning({ type: VersioningType.URI, defaultVersion: version, prefix: versioningPrefix });
 
-  // swagger
-
   // kafka
+
+  // swagger
 
   // listen
   await app.listen(port, host);
@@ -50,7 +50,7 @@ async function bootstrap() {
   logger.log(`Http versioning is ${versionEnable}`, 'NestApplication');
 
   logger.log(`Http Server running on ${await app.getUrl()}`, 'NestApplication');
-  // logger.log(`Database uri ${databaseURI}`, 'NestApplication');
+  logger.log(`Database uri ${databaseUri}`, 'NestApplication');
 
   logger.log(`==========================================================`);
 }
