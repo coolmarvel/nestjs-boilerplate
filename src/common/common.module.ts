@@ -102,11 +102,11 @@ import configs from 'src/configs';
         AWS_S3_REGION: Joi.string().allow(null, '').optional(),
         AWS_S3_BUCKET: Joi.string().allow(null, '').optional(),
 
-        KAFKA_CLIENT_ID: Joi.string().default('KAFKA_ACK').required(),
-        KAFKA_ADMIN_CLIENT_ID: Joi.string().default('KAFKA_ADMIN_ACK').required(),
+        KAFKA_CLIENT_ID: Joi.string().default('KAFKA_COOLMARVEL').required(),
+        KAFKA_ADMIN_CLIENT_ID: Joi.string().default('KAFKA_ADMIN_COOLMARVEL').required(),
         KAFKA_BROKERS: Joi.string().default('localhost:9092').required(),
         KAFKA_CONSUMER_ENABLE: Joi.boolean().default(true).required(),
-        KAFKA_CONSUMER_GROUP: Joi.string().default('nestjs.ack').required(),
+        KAFKA_CONSUMER_GROUP: Joi.string().default('nestjs.coolmarvel').required(),
       }),
       validationOptions: {
         allowUnknown: true,
