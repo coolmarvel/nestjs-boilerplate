@@ -108,10 +108,7 @@ import configs from 'src/configs';
         KAFKA_CONSUMER_ENABLE: Joi.boolean().default(true).required(),
         KAFKA_CONSUMER_GROUP: Joi.string().default('nestjs.coolmarvel').required(),
       }),
-      validationOptions: {
-        allowUnknown: true,
-        abortEarly: true,
-      },
+      validationOptions: { allowUnknown: true, abortEarly: true },
     }),
   ],
   providers: [],

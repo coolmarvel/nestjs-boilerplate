@@ -4,6 +4,8 @@ import { ConfigService } from '@nestjs/config';
 import { useContainer } from 'class-validator';
 import { Logger, VersioningType } from '@nestjs/common';
 
+import kafkaInit from './kafka';
+
 async function bootstrap() {
   const app: NestApplication = await NestFactory.create(AppModule);
 
@@ -32,6 +34,7 @@ async function bootstrap() {
   if (versionEnable) app.enableVersioning({ type: VersioningType.URI, defaultVersion: version, prefix: versioningPrefix });
 
   // kafka
+  await kafkaInit(app);
 
   // swagger
 
