@@ -17,7 +17,17 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "kafka:create-topics": "nestjs-command insert:kafka-topics",
+    "kafka:delete-topics": "nestjs-command remove:kafka-topics",
+    "seed:setting": "nestjs-command seed:setting",
+    "seed:apikey": "nestjs-command seed:apikey",
+    "seed:role": "nestjs-command seed:role",
+    "rollback:setting": "nestjs-command remove:setting",
+    "rollback:apikey": "nestjs-command remove:apikey",
+    "rollback:role": "nestjs-command remove:role",
+    "seed": "yarn seed:setting && yarn seed:apikey && yarn seed:role",
+    "rollback": "yarn rollback:setting && yarn rollback:apikey && yarn rollback:role"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.306",
@@ -46,6 +56,7 @@
     "mongoose": "^7.6.9",
     "morgan": "^1.10.0",
     "nest-winston": "^1.9.4",
+    "nestjs-command": "^3.1.4",
     "nestjs-i18n": "^10.4.5",
     "passport": "^0.7.0",
     "passport-headerapikey": "^1.2.2",
@@ -57,7 +68,8 @@
     "ua-parser-js": "^1.0.37",
     "winston": "^3.11.0",
     "winston-daily-rotate-file": "^5.0.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
