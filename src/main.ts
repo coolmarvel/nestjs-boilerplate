@@ -34,7 +34,7 @@ async function bootstrap() {
   if (versionEnable) app.enableVersioning({ type: VersioningType.URI, defaultVersion: version, prefix: versioningPrefix });
 
   // kafka
-  await kafkaInit(app);
+  // await kafkaInit(app);
 
   // swagger
 
