@@ -37,12 +37,6 @@ import configs from 'src/configs';
     LoggerModule,
     ApiKeyModule,
     AuthModule,
-    MongooseModule.forRootAsync({
-      connectionName: DATABASE_CONNECTION_NAME,
-      imports: [DatabaseOptionsModule],
-      inject: [DatabaseOptionsService],
-      useFactory: (databaseOptionsService: DatabaseOptionsService) => databaseOptionsService.createOptions(),
-    }),
     ConfigModule.forRoot({
       load: configs,
       isGlobal: true,
@@ -74,7 +68,7 @@ import configs from 'src/configs';
         JOB_ENABLE: Joi.boolean().default(false).required(),
 
         DATABASE_HOST: Joi.string().default('mongodb://localhost:27017').required(),
-        DATABASE_NAME: Joi.string().default('ack').required(),
+        DATABASE_NAME: Joi.string().default('coolmarvel').required(),
         DATABASE_USER: Joi.string().allow(null, '').optional(),
         DATABASE_PASSWORD: Joi.string().allow(null, '').optional(),
         DATABASE_DEBUG: Joi.boolean().default(false).required(),
@@ -109,6 +103,12 @@ import configs from 'src/configs';
         KAFKA_CONSUMER_GROUP: Joi.string().default('nestjs.coolmarvel').required(),
       }),
       validationOptions: { allowUnknown: true, abortEarly: true },
+    }),
+    MongooseModule.forRootAsync({
+      connectionName: DATABASE_CONNECTION_NAME,
+      imports: [DatabaseOptionsModule],
+      inject: [DatabaseOptionsService],
+      useFactory: (databaseOptionsService: DatabaseOptionsService) => databaseOptionsService.createOptions(),
     }),
   ],
   providers: [],
